@@ -4,16 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Idhanushh — Dhanush Selvadurai</title>
+<title>Idhanushh | Dhanush Selvadurai — Official Website</title>
 
-<meta name="description" content="Official website of Idhanushh, also known as Dhanush Selvadurai, an independent artist. Explore music, videos, discography, gallery and updates.">
+<meta name="description" content="Official website of Idhanushh, also known as Dhanush Selvadurai. Explore music, discography, videos, gallery and latest updates.">
 <meta name="author" content="Dhanush Selvadurai">
+<meta name="theme-color" content="#050505">
 
 <style>
+
+/* =========================================================
+   IDHANUSHH — PROFESSIONAL ARTIST WEBSITE
+   ========================================================= */
+
+:root {
+    --bg: #050505;
+    --bg-soft: #0b0b0d;
+    --card: #101014;
+    --card-light: #15151a;
+    --text: #ffffff;
+    --muted: #a5a5ad;
+    --line: rgba(255,255,255,0.10);
+    --accent: #3b82f6;
+    --accent-light: #60a5fa;
+    --max: 1180px;
+}
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -21,901 +40,1011 @@ html {
 }
 
 body {
+    background: var(--bg);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
-    background: #f6f7f9;
-    color: #202122;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* HEADER */
-header {
-    background: #111827;
-    color: white;
-    padding: 18px 20px;
-    position: sticky;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar {
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(5,5,5,0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
 }
 
-.header-inner {
-    max-width: 1150px;
+.nav-inner {
+    max-width: var(--max);
     margin: auto;
+    height: 76px;
+    padding: 0 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: bold;
-    white-space: nowrap;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
 .logo span {
-    color: #60a5fa;
+    color: var(--accent-light);
 }
 
-nav {
+.nav-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
+    gap: 26px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 11px;
-    border-radius: 6px;
+.nav-links a {
+    color: #d8d8dc;
     font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s;
 }
 
-nav a:hover {
-    background: #374151;
+.nav-links a:hover {
+    color: white;
 }
 
-/* SEARCH */
-.search-box {
-    max-width: 1150px;
-    margin: 25px auto 0;
-    padding: 0 20px;
+.menu-btn {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid #c9ccd1;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-}
-
-.search-box input:focus {
-    border-color: #3366cc;
-    box-shadow: 0 0 0 3px rgba(51,102,204,0.12);
-}
-
-/* MAIN */
-main {
-    max-width: 1150px;
-    margin: auto;
-    padding: 25px 20px 50px;
-}
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
-    background: white;
-    border: 1px solid #d8dadd;
-    border-radius: 10px;
-    padding: 35px;
-    margin-bottom: 25px;
-    text-align: center;
+    min-height: 100vh;
+    padding-top: 76px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 8px;
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 70% 40%, rgba(37,99,235,0.25), transparent 32%),
+        radial-gradient(circle at 20% 80%, rgba(59,130,246,0.10), transparent 30%),
+        #050505;
 }
 
-.hero h1 span {
-    color: #3366cc;
+.hero-grid {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max);
+    width: 100%;
+    margin: auto;
+    padding: 70px 25px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #54595d;
-}
-
-.hero-buttons {
-    margin-top: 22px;
-}
-
-.button {
-    display: inline-block;
-    background: #3366cc;
-    color: white;
-    text-decoration: none;
-    padding: 11px 18px;
-    border-radius: 7px;
-    margin: 5px;
+.hero-small {
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
     font-weight: bold;
-}
-
-.button:hover {
-    background: #2855a8;
-}
-
-.button.secondary {
-    background: #202122;
-}
-
-section {
-    background: white;
-    border: 1px solid #d8dadd;
-    border-radius: 10px;
-    padding: 28px;
-    margin-bottom: 25px;
-}
-
-section h2 {
-    font-size: 28px;
-    border-bottom: 1px solid #c8ccd1;
-    padding-bottom: 10px;
     margin-bottom: 18px;
 }
 
-section h3 {
-    margin-bottom: 8px;
+.hero h1 {
+    font-size: clamp(58px, 9vw, 112px);
+    line-height: 0.88;
+    letter-spacing: -6px;
+    margin-bottom: 25px;
 }
 
-p {
-    margin-bottom: 12px;
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
 }
 
-/* INFOBOX */
-.infobox {
-    float: right;
-    width: 320px;
-    margin: 0 0 20px 25px;
-    background: #f8f9fa;
-    border: 1px solid #a2a9b1;
-    border-radius: 6px;
-    overflow: hidden;
+.hero-description {
+    color: var(--muted);
+    max-width: 520px;
+    font-size: 17px;
+    margin-bottom: 32px;
 }
 
-.infobox-title {
-    background: #eaecf0;
-    text-align: center;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.infobox-image {
-    height: 190px;
-    background: linear-gradient(135deg, #111827, #374151);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.infobox-row {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    border-top: 1px solid #c8ccd1;
-}
-
-.infobox-row strong,
-.infobox-row span {
-    padding: 9px;
-}
-
-.infobox-row strong {
-    background: #eaecf0;
-}
-
-/* TABLE */
-.table-wrapper {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-th {
-    background: #eaecf0;
-    text-align: left;
-}
-
-th, td {
-    border: 1px solid #c8ccd1;
-    padding: 11px;
-}
-
-tr:hover {
-    background: #f8f9fa;
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.card {
-    border: 1px solid #d8dadd;
-    border-radius: 9px;
-    overflow: hidden;
-    background: white;
-}
-
-.card-image {
-    height: 150px;
-    background: linear-gradient(135deg, #111827, #4b5563);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.card-content {
-    padding: 17px;
-}
-
-.card-content h3 {
-    color: #202122;
-}
-
-.card-content p {
-    color: #54595d;
-    font-size: 14px;
-}
-
-/* GALLERY */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.gallery-item {
-    height: 190px;
-    background: linear-gradient(135deg, #e5e7eb, #9ca3af);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #202122;
-    font-weight: bold;
-}
-
-/* LINKS */
-.links {
+.hero-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.links a {
-    display: inline-block;
-    background: #f0f2f5;
-    border: 1px solid #c8ccd1;
-    padding: 10px 15px;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 21px;
     border-radius: 7px;
-    color: #3366cc;
-    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.25s;
 }
 
-.links a:hover {
+.btn-primary {
+    background: white;
+    color: #050505;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
     background: #e5e7eb;
 }
 
-/* FOOTER */
-footer {
-    background: #111827;
-    color: #d1d5db;
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.hero-photo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-photo {
+    width: min(480px, 100%);
+    height: 600px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    filter: contrast(1.03);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.7),
+        0 0 80px rgba(59,130,246,0.10);
+}
+
+.photo-label {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 13px 16px;
+    border-radius: 7px;
+}
+
+.photo-label strong {
+    display: block;
+    font-size: 15px;
+}
+
+.photo-label small {
+    color: #aaa;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+    max-width: var(--max);
+    margin: auto;
+    padding: 110px 25px;
+}
+
+.section-dark {
+    background: var(--bg);
+}
+
+.section-soft {
+    background: var(--bg-soft);
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.eyebrow {
+    color: var(--accent-light);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 600px;
+    margin-top: 14px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-photo {
+    width: 100%;
+    max-height: 620px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 17px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 30px;
+    border: 1px solid var(--line);
+    background: var(--line);
+}
+
+.info-item {
+    background: var(--card);
+    padding: 17px;
+}
+
+.info-item small {
+    display: block;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 9px;
+    margin-bottom: 5px;
+}
+
+.info-item strong {
+    font-size: 14px;
+}
+
+/* =========================================================
+   MUSIC
+   ========================================================= */
+
+.music-list {
+    border-top: 1px solid var(--line);
+}
+
+.music-item {
+    display: grid;
+    grid-template-columns: 65px 1fr 120px 110px;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 5px;
+    border-bottom: 1px solid var(--line);
+    transition: 0.25s;
+}
+
+.music-item:hover {
+    background: rgba(255,255,255,0.025);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.music-number {
+    color: #555;
+    font-size: 13px;
+}
+
+.music-title {
+    font-weight: 700;
+}
+
+.music-type,
+.music-year {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.listen-btn {
+    color: var(--accent-light);
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* =========================================================
+   FEATURED PROJECTS
+   ========================================================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.25);
+}
+
+.project-cover {
+    height: 280px;
+    background:
+        linear-gradient(135deg, #111827, #1e3a8a);
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+}
+
+.project-cover.tasveer {
+    background:
+        linear-gradient(135deg, #18181b, #334155);
+}
+
+.project-cover.goat {
+    background:
+        linear-gradient(135deg, #09090b, #172554);
+}
+
+.project-cover span {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 7px 0 15px;
+}
+
+/* =========================================================
+   VIDEOS
+   ========================================================= */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.video-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-placeholder {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle, rgba(59,130,246,0.18), transparent 35%),
+        #0c0c10;
+}
+
+.play {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-grid {
+    columns: 2;
+    column-gap: 18px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--card);
+}
+
+.gallery-item img {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.025);
+}
+
+.gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 35px 18px 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   UPDATES
+   ========================================================= */
+
+.updates {
+    display: grid;
+    gap: 14px;
+}
+
+.update {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 25px;
+    padding: 23px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.update-date {
+    color: var(--accent-light);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.update h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.update p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================================================
+   SOCIALS
+   ========================================================= */
+
+.social-section {
     text-align: center;
-    padding: 30px 20px;
 }
 
-footer p {
-    margin: 5px;
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
 }
 
-/* SEARCH RESULT */
-.hidden {
-    display: none !important;
+.social-link {
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 13px 22px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.25s;
 }
 
-/* MOBILE */
-@media (max-width: 800px) {
+.social-link:hover {
+    background: white;
+    color: black;
+}
 
-    .header-inner {
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-area {
+    max-width: var(--max);
+    margin: auto;
+    padding: 25px 25px 0;
+}
+
+.search-box {
+    width: 100%;
+    background: #0d0d10;
+    border: 1px solid var(--line);
+    color: white;
+    padding: 15px 18px;
+    border-radius: 7px;
+    outline: none;
+}
+
+.search-box::placeholder {
+    color: #666;
+}
+
+.search-box:focus {
+    border-color: rgba(96,165,250,0.6);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    border-top: 1px solid var(--line);
+    background: #030303;
+    padding: 55px 25px 30px;
+}
+
+.footer-inner {
+    max-width: var(--max);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--accent-light);
+}
+
+.footer-text {
+    color: #666;
+    font-size: 12px;
+    max-width: 420px;
+}
+
+.copyright {
+    max-width: var(--max);
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: #555;
+    font-size: 11px;
+}
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.top-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(15,15,18,0.9);
+    color: white;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: rgba(5,5,5,0.98);
+        border-bottom: 1px solid var(--line);
+        padding: 20px 25px;
         flex-direction: column;
         align-items: flex-start;
+        gap: 18px;
     }
 
-    nav {
-        width: 100%;
+    .nav-links.active {
+        display: flex;
     }
 
-    nav a {
-        font-size: 13px;
+    .menu-btn {
+        display: block;
+    }
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero {
-        padding: 25px 18px;
+        min-height: auto;
+    }
+
+    .hero-grid {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .hero-photo {
+        height: 520px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-item {
+        grid-template-columns: 40px 1fr 70px;
+    }
+
+    .music-type {
+        display: none;
+    }
+
+    .listen-btn {
+        font-size: 11px;
+    }
+
+    .gallery-grid {
+        columns: 1;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .nav-inner {
+        height: 68px;
+    }
+
+    .hero {
+        padding-top: 68px;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 60px;
+        letter-spacing: -4px;
     }
 
-    .infobox {
-        float: none;
-        width: 100%;
-        margin: 0 0 20px 0;
+    .hero-photo {
+        height: 430px;
     }
 
-    .cards {
+    .section {
+        padding: 75px 18px;
+    }
+
+    .search-area {
+        padding: 18px;
+    }
+
+    .info-grid {
         grid-template-columns: 1fr;
     }
 
-    .gallery {
+    .update {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    section {
-        padding: 20px;
-    }
-
-    table {
-        min-width: 650px;
+    .project-cover {
+        height: 240px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-inner">
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
 
-        <div class="logo">
-            Idhanushh<span>®</span>
-        </div>
+<header class="navbar">
 
-        <nav>
-            <a href="#home">Home</a>
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            IDHANUSHH<span>®</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
             <a href="#about">About</a>
             <a href="#music">Music</a>
+            <a href="#projects">Projects</a>
             <a href="#videos">Videos</a>
             <a href="#gallery">Gallery</a>
             <a href="#updates">Updates</a>
         </nav>
 
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+            ☰
+        </button>
+
     </div>
+
 </header>
 
-<div class="search-box">
+
+<!-- =====================================================
+     HOME
+     ===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-grid">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                Independent Artist
+            </div>
+
+            <h1>
+                IDHANU<span>SHH</span>
+            </h1>
+
+            <p class="hero-description">
+                Dhanush Selvadurai — independent artist creating
+                music across hip-hop, rap, pop, love and emotion.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#music" class="btn btn-primary">
+                    Explore Music
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    About Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-photo-wrap">
+
+            <img
+                src="1000156724.jpg"
+                alt="Idhanushh — Dhanush Selvadurai"
+                class="hero-photo"
+            >
+
+            <div class="photo-label">
+                <strong>Dhanush Selvadurai</strong>
+                <small>Artist • Musician • Rapper</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+     ===================================================== -->
+
+<div class="search-area">
+
     <input
-        type="text"
+        type="search"
         id="searchInput"
-        placeholder="Search this website..."
-        onkeyup="searchWebsite()"
+        class="search-box"
+        placeholder="Search the Idhanushh website..."
+        onkeyup="searchSite()"
     >
+
 </div>
 
-<main>
 
-<!-- HOME -->
-<section id="home" class="hero searchable">
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
 
-    <h1>Idhanushh</h1>
+<section class="section section-dark searchable" id="about">
 
-    <p>
-        Independent Artist • Musician • Rapper
-    </p>
+    <div class="section-heading">
 
-    <div class="hero-buttons">
-        <a class="button" href="#music">Explore Music</a>
-        <a class="button secondary" href="#about">About Idhanushh</a>
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-<section id="about" class="searchable">
-
-    <div class="infobox">
-
-        <div class="infobox-title">
-            Idhanushh
+        <div class="eyebrow">
+            About
         </div>
 
-        <div class="infobox-image">
-            IDHANUSHH
-        </div>
+        <h2>The Artist</h2>
 
-        <div class="infobox-row">
-            <strong>Birth name</strong>
-            <span>Dhanush Selvadurai</span>
-        </div>
-
-        <div class="infobox-row">
-            <strong>Stage name</strong>
-            <span>Idhanushh</span>
-        </div>
-
-        <div class="infobox-row">
-            <strong>Occupation</strong>
-            <span>Independent Artist</span>
-        </div>
-
-        <div class="infobox-row">
-            <strong>Genres</strong>
-            <span>Hip-Hop, Rap, Pop</span>
-        </div>
-
-        <div class="infobox-row">
-            <strong>Years active</strong>
-            <span>2024–present</span>
-        </div>
+        <p>
+            Get to know Idhanushh and the person behind the music.
+        </p>
 
     </div>
 
-    <h2>About Idhanushh</h2>
 
-    <p>
-        <strong>Idhanushh</strong>, also known as
-        <strong>Dhanush Selvadurai</strong>, is an independent
-        artist working across music, hip-hop, rap and pop.
-    </p>
+    <div class="about-grid">
 
-    <p>
-        His music explores themes including love, heartbreak,
-        emotions, relationships and personal experiences.
-    </p>
+        <div>
 
-    <p>
-        This website is a personal encyclopedia-style archive
-        dedicated to Idhanushh, including his music, projects,
-        videos, gallery and updates.
-    </p>
-
-    <div style="clear:both;"></div>
-
-</section>
-
-
-<!-- MUSIC -->
-<section id="music" class="searchable">
-
-    <h2>Music & Discography</h2>
-
-    <p>
-        Selected releases and musical projects associated with Idhanushh.
-    </p>
-
-    <div class="table-wrapper">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Release</th>
-                    <th>Year</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Penney Penney</td>
-                    <td>2024</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>MIGHTITTUDE</td>
-                    <td>2024</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Enna Vittu</td>
-                    <td>2024</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Who theyy</td>
-                    <td>2024</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Unakkena Vazhuren</td>
-                    <td>2024</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>En appa (Live)</td>
-                    <td>2024</td>
-                    <td>Live</td>
-                </tr>
-
-                <tr>
-                    <td>Scary Hours</td>
-                    <td>2025</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>En Kanmaniye</td>
-                    <td>2025</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Zindagi</td>
-                    <td>2025</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Break Up</td>
-                    <td>2025</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Tere liye</td>
-                    <td>2025</td>
-                    <td>Single</td>
-                </tr>
-
-                <tr>
-                    <td>Jaan</td>
-                    <td>2025</td>
-                    <td>Single</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<!-- FEATURED PROJECTS -->
-<section class="searchable">
-
-    <h2>Featured Projects</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="card-image">
-                ENNAVAL
-            </div>
-
-            <div class="card-content">
-                <h3>Ennaval</h3>
-                <p>
-                    A romantic musical project by Idhanushh.
-                </p>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-image">
-                TASVEER
-            </div>
-
-            <div class="card-content">
-                <h3>Tasveer</h3>
-                <p>
-                    A love-themed project featuring Idhanushh.
-                </p>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-image">
-                GOAT ANTHEM
-            </div>
-
-            <div class="card-content">
-                <h3>Goat Anthem</h3>
-                <p>
-                    An upcoming music project from Idhanushh.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- VIDEOS -->
-<section id="videos" class="searchable">
-
-    <h2>Music Videos</h2>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="card-image">
-                ▶ VIDEO
-            </div>
-
-            <div class="card-content">
-                <h3>Official Music Videos</h3>
-
-                <p>
-                    Music videos and visual projects by Idhanushh.
-                </p>
-
-                <a class="button"
-                   href="https://www.youtube.com/"
-                   target="_blank">
-                    Watch on YouTube
-                </a>
-
-            </div>
+            <img
+                src="1000156729.jpg"
+                alt="Dhanush Selvadurai"
+                class="about-photo"
+            >
 
         </div>
 
 
-        <div class="card">
+        <div class="about-text">
 
-            <div class="card-image">
-                ▶ SHORTS
-            </div>
+            <h3>
+                Idhanushh
+            </h3>
 
-            <div class="card-content">
+            <p>
+                <strong>Dhanush Selvadurai</strong>, professionally
+                known as <strong>Idhanushh</strong>, is an independent
+                artist working across music, hip-hop, rap and pop.
+            </p>
 
-                <h3>YouTube Shorts</h3>
+            <p>
+                His musical work explores love, heartbreak,
+                relationships, emotions and personal experiences,
+                with a focus on developing an individual sound
+                and artistic identity.
+            </p>
 
-                <p>
-                    Short-form music content, edits and performances.
-                </p>
-
-                <a class="button"
-                   href="https://www.youtube.com/"
-                   target="_blank">
-                    View Shorts
-                </a>
-
-            </div>
-
-        </div>
+            <p>
+                This official personal website serves as a central
+                place for music, projects, visual work and future
+                announcements from Idhanushh.
+            </p>
 
 
-        <div class="card">
+            <div class="info-grid">
 
-            <div class="card-image">
-                ♫ MUSIC
-            </div>
+                <div class="info-item">
+                    <small>Birth Name</small>
+                    <strong>Dhanush Selvadurai</strong>
+                </div>
 
-            <div class="card-content">
+                <div class="info-item">
+                    <small>Stage Name</small>
+                    <strong>Idhanushh</strong>
+                </div>
 
-                <h3>Streaming Music</h3>
+                <div class="info-item">
+                    <small>Occupation</small>
+                    <strong>Independent Artist</strong>
+                </div>
 
-                <p>
-                    Discover Idhanushh on music streaming platforms.
-                </p>
+                <div class="info-item">
+                    <small>Genres</small>
+                    <strong>Hip-Hop • Rap • Pop</strong>
+                </div>
 
-                <a class="button"
-                   href="https://open.spotify.com/"
-                   target="_blank">
-                    Spotify
-                </a>
+                <div class="info-item">
+                    <small>Active</small>
+                    <strong>2024 — Present</strong>
+                </div>
+
+                <div class="info-item">
+                    <small>Based In</small>
+                    <strong>India</strong>
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
-</section>
-
-
-<!-- GALLERY -->
-<section id="gallery" class="searchable">
-
-    <h2>Gallery</h2>
-
-    <p>
-        Photos, cover artwork, promotional artwork and visual projects.
-    </p>
-
-    <div class="gallery">
-
-        <div class="gallery-item">
-            IDHANUSHH<br>PHOTO
-        </div>
-
-        <div class="gallery-item">
-            MUSIC<br>COVER
-        </div>
-
-        <div class="gallery-item">
-            PROMO<br>ARTWORK
-        </div>
-
-        <div class="gallery-item">
-            ENNAVAL
-        </div>
-
-        <div class="gallery-item">
-            TASVEER
-        </div>
-
-        <div class="gallery-item">
-            GOAT ANTHEM
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- UPDATES -->
-<section id="updates" class="searchable">
-
-    <h2>News & Updates</h2>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="card-content">
-
-                <h3>New Music</h3>
-
-                <p>
-                    New music and upcoming projects from Idhanushh
-                    will be announced here.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-content">
-
-                <h3>New Videos</h3>
-
-                <p>
-                    New music videos and visual content will be
-                    added to the website.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-content">
-
-                <h3>Latest Updates</h3>
-
-                <p>
-                    Follow Idhanushh's official platforms for
-                    the latest announcements.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- OFFICIAL LINKS -->
-<section class="searchable">
-
-    <h2>Official Links</h2>
-
-    <div class="links">
-
-        <a href="https://www.youtube.com/"
-           target="_blank">
-            YouTube
-        </a>
-
-        <a href="https://open.spotify.com/"
-           target="_blank">
-            Spotify
-        </a>
-
-        <a href="https://www.instagram.com/"
-           target="_blank">
-            Instagram
-        </a>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <p><strong>Idhanushh</strong></p>
-
-    <p>
-        Dhanush Selvadurai • Independent Artist
-    </p>
-
-    <p>
-        © 2026 Idhanushh. All rights reserved.
-    </p>
-
-    <p>
-        This is an independent personal website and is not
-        affiliated with Wikipedia or Wikimedia Foundation.
-    </p>
-
-</footer>
-
-
-<script>
-
-function searchWebsite() {
-
-    const input = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const sections = document.querySelectorAll(".searchable");
-
-    sections.forEach(function(section) {
-
-        const text = section.innerText.toLowerCase();
-
-        if (input === "" || text.includes(input)) {
-            section.classList.remove("hidden");
-        } else {
-            section.classList.add("hidden");
-        }
-
-    });
-
-}
-
-</script>
-
-</body>
-</html>
