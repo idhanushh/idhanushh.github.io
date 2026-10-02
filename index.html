@@ -1,1050 +1,980 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Idhanushh | Dhanush Selvadurai — Official Website</title>
-
-<meta name="description" content="Official website of Idhanushh, also known as Dhanush Selvadurai. Explore music, discography, videos, gallery and latest updates.">
-<meta name="author" content="Dhanush Selvadurai">
-<meta name="theme-color" content="#050505">
-
-<style>
-
-/* =========================================================
-   IDHANUSHH — PROFESSIONAL ARTIST WEBSITE
-   ========================================================= */
-
-:root {
-    --bg: #050505;
-    --bg-soft: #0b0b0d;
-    --card: #101014;
-    --card-light: #15151a;
-    --text: #ffffff;
-    --muted: #a5a5ad;
-    --line: rgba(255,255,255,0.10);
-    --accent: #3b82f6;
-    --accent-light: #60a5fa;
-    --max: 1180px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #050505;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    background: rgba(5,5,5,0.78);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--line);
-}
-
-.nav-inner {
-    max-width: var(--max);
-    margin: auto;
-    height: 76px;
-    padding: 0 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: var(--accent-light);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-}
-
-.nav-links a {
-    color: #d8d8dc;
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.25s;
-}
-
-.nav-links a:hover {
-    color: white;
-}
-
-.menu-btn {
-    display: none;
-    border: 0;
-    background: transparent;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-    min-height: 100vh;
-    padding-top: 76px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 70% 40%, rgba(37,99,235,0.25), transparent 32%),
-        radial-gradient(circle at 20% 80%, rgba(59,130,246,0.10), transparent 30%),
-        #050505;
-}
-
-.hero-grid {
-    position: relative;
-    z-index: 2;
-    max-width: var(--max);
-    width: 100%;
-    margin: auto;
-    padding: 70px 25px;
-    display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    align-items: center;
-    gap: 55px;
-}
-
-.hero-small {
-    color: var(--accent-light);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: clamp(58px, 9vw, 112px);
-    line-height: 0.88;
-    letter-spacing: -6px;
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;
-}
-
-.hero-description {
-    color: var(--muted);
-    max-width: 520px;
-    font-size: 17px;
-    margin-bottom: 32px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 13px 21px;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: 700;
-    transition: 0.25s;
-}
-
-.btn-primary {
-    background: white;
-    color: #050505;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    background: #e5e7eb;
-}
-
-.btn-outline {
-    border: 1px solid rgba(255,255,255,0.25);
-    color: white;
-}
-
-.btn-outline:hover {
-    background: rgba(255,255,255,0.08);
-}
-
-.hero-photo-wrap {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-photo {
-    width: min(480px, 100%);
-    height: 600px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 8px;
-    filter: contrast(1.03);
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.7),
-        0 0 80px rgba(59,130,246,0.10);
-}
-
-.photo-label {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 13px 16px;
-    border-radius: 7px;
-}
-
-.photo-label strong {
-    display: block;
-    font-size: 15px;
-}
-
-.photo-label small {
-    color: #aaa;
-}
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
-.section {
-    max-width: var(--max);
-    margin: auto;
-    padding: 110px 25px;
-}
-
-.section-dark {
-    background: var(--bg);
-}
-
-.section-soft {
-    background: var(--bg-soft);
-}
-
-.section-heading {
-    margin-bottom: 45px;
-}
-
-.eyebrow {
-    color: var(--accent-light);
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-}
-
-.section-heading h2 {
-    font-size: clamp(34px, 5vw, 58px);
-    line-height: 1;
-    letter-spacing: -2px;
-}
-
-.section-heading p {
-    color: var(--muted);
-    max-width: 600px;
-    margin-top: 14px;
-}
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.about-photo {
-    width: 100%;
-    max-height: 620px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 8px;
-}
-
-.about-text h3 {
-    font-size: 30px;
-    margin-bottom: 18px;
-}
-
-.about-text p {
-    color: var(--muted);
-    margin-bottom: 17px;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    margin-top: 30px;
-    border: 1px solid var(--line);
-    background: var(--line);
-}
-
-.info-item {
-    background: var(--card);
-    padding: 17px;
-}
-
-.info-item small {
-    display: block;
-    color: #777;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 9px;
-    margin-bottom: 5px;
-}
-
-.info-item strong {
-    font-size: 14px;
-}
-
-/* =========================================================
-   MUSIC
-   ========================================================= */
-
-.music-list {
-    border-top: 1px solid var(--line);
-}
-
-.music-item {
-    display: grid;
-    grid-template-columns: 65px 1fr 120px 110px;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 5px;
-    border-bottom: 1px solid var(--line);
-    transition: 0.25s;
-}
-
-.music-item:hover {
-    background: rgba(255,255,255,0.025);
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.music-number {
-    color: #555;
-    font-size: 13px;
-}
-
-.music-title {
-    font-weight: 700;
-}
-
-.music-type,
-.music-year {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-.listen-btn {
-    color: var(--accent-light);
-    font-size: 12px;
-    font-weight: bold;
-    text-align: right;
-}
-
-/* =========================================================
-   FEATURED PROJECTS
-   ========================================================= */
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.project-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255,255,255,0.25);
-}
-
-.project-cover {
-    height: 280px;
-    background:
-        linear-gradient(135deg, #111827, #1e3a8a);
-    display: flex;
-    align-items: flex-end;
-    padding: 22px;
-}
-
-.project-cover.tasveer {
-    background:
-        linear-gradient(135deg, #18181b, #334155);
-}
-
-.project-cover.goat {
-    background:
-        linear-gradient(135deg, #09090b, #172554);
-}
-
-.project-cover span {
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-.project-info {
-    padding: 20px;
-}
-
-.project-info p {
-    color: var(--muted);
-    font-size: 13px;
-    margin: 7px 0 15px;
-}
-
-/* =========================================================
-   VIDEOS
-   ========================================================= */
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.video-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.video-placeholder {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background:
-        radial-gradient(circle, rgba(59,130,246,0.18), transparent 35%),
-        #0c0c10;
-}
-
-.play {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-}
-
-.video-info {
-    padding: 20px;
-}
-
-.video-info p {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-/* =========================================================
-   GALLERY
-   ========================================================= */
-
-.gallery-grid {
-    columns: 2;
-    column-gap: 18px;
-}
-
-.gallery-item {
-    break-inside: avoid;
-    margin-bottom: 18px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    background: var(--card);
-}
-
-.gallery-item img {
-    width: 100%;
-    transition: 0.4s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.025);
-}
-
-.gallery-caption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 35px 18px 16px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* =========================================================
-   UPDATES
-   ========================================================= */
-
-.updates {
-    display: grid;
-    gap: 14px;
-}
-
-.update {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 25px;
-    padding: 23px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-}
-
-.update-date {
-    color: var(--accent-light);
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.update h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.update p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* =========================================================
-   SOCIALS
-   ========================================================= */
-
-.social-section {
-    text-align: center;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 28px;
-}
-
-.social-link {
-    border: 1px solid var(--line);
-    background: var(--card);
-    padding: 13px 22px;
-    border-radius: 7px;
-    font-size: 13px;
-    font-weight: bold;
-    transition: 0.25s;
-}
-
-.social-link:hover {
-    background: white;
-    color: black;
-}
-
-/* =========================================================
-   SEARCH
-   ========================================================= */
-
-.search-area {
-    max-width: var(--max);
-    margin: auto;
-    padding: 25px 25px 0;
-}
-
-.search-box {
-    width: 100%;
-    background: #0d0d10;
-    border: 1px solid var(--line);
-    color: white;
-    padding: 15px 18px;
-    border-radius: 7px;
-    outline: none;
-}
-
-.search-box::placeholder {
-    color: #666;
-}
-
-.search-box:focus {
-    border-color: rgba(96,165,250,0.6);
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    border-top: 1px solid var(--line);
-    background: #030303;
-    padding: 55px 25px 30px;
-}
-
-.footer-inner {
-    max-width: var(--max);
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.footer-logo {
-    font-size: 24px;
-    font-weight: 900;
-}
-
-.footer-logo span {
-    color: var(--accent-light);
-}
-
-.footer-text {
-    color: #666;
-    font-size: 12px;
-    max-width: 420px;
-}
-
-.copyright {
-    max-width: var(--max);
-    margin: 40px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    color: #555;
-    font-size: 11px;
-}
-
-/* =========================================================
-   BACK TO TOP
-   ========================================================= */
-
-.top-btn {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    background: rgba(15,15,18,0.9);
-    color: white;
-    cursor: pointer;
-    z-index: 999;
-    display: none;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        background: rgba(5,5,5,0.98);
-        border-bottom: 1px solid var(--line);
-        padding: 20px 25px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Idhanushh — Official Website</title>
+  <meta name="description" content="Official website of Idhanushh — Independent artist, musician and rapper.">
+  <meta name="theme-color" content="#05070d">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    .nav-links.active {
-        display: flex;
+    :root {
+      --bg: #05070d;
+      --bg2: #0a0e18;
+      --card: rgba(255,255,255,0.055);
+      --border: rgba(255,255,255,0.10);
+      --text: #ffffff;
+      --muted: #a9b0c0;
+      --blue: #5ca8ff;
+      --blue2: #1976ff;
+      --max: 1180px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(25,118,255,0.16), transparent 30%),
+        radial-gradient(circle at 10% 40%, rgba(92,168,255,0.08), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5,7,13,0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #76c1ff, #166cff);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 14px;
+      box-shadow: 0 0 25px rgba(40,130,255,0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #c9cfdb;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
     }
 
     .menu-btn {
-        display: block;
+      display: none;
+      border: 0;
+      background: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
     }
 
-    .hero-grid,
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
+    /* HERO */
 
     .hero {
-        min-height: auto;
+      min-height: 100vh;
+      padding-top: 74px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(25,118,255,0.13);
+      filter: blur(100px);
+      right: -150px;
+      top: 100px;
     }
 
     .hero-grid {
-        padding-top: 70px;
-        padding-bottom: 70px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px;
+      align-items: center;
     }
 
-    .hero-photo {
-        height: 520px;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .music-item {
-        grid-template-columns: 40px 1fr 70px;
-    }
-
-    .music-type {
-        display: none;
-    }
-
-    .listen-btn {
-        font-size: 11px;
-    }
-
-    .gallery-grid {
-        columns: 1;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 520px) {
-
-    .nav-inner {
-        height: 68px;
-    }
-
-    .hero {
-        padding-top: 68px;
+    .eyebrow {
+      color: var(--blue);
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-        font-size: 60px;
-        letter-spacing: -4px;
+      font-size: clamp(55px, 9vw, 110px);
+      line-height: .9;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.55);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 580px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.10);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #2382ff, #1056ce);
+      border-color: transparent;
     }
 
     .hero-photo {
-        height: 430px;
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
 
-    .section {
-        padding: 75px 18px;
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: 10%;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(92,168,255,.3), transparent);
+      filter: blur(30px);
     }
 
-    .search-area {
-        padding: 18px;
+    .hero-photo img {
+      width: min(430px, 100%);
+      height: 540px;
+      object-fit: cover;
+      border-radius: 28px;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-head {
+      margin-bottom: 45px;
+    }
+
+    .section-head .small {
+      color: var(--blue);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+    }
+
+    .about-text h3 {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 16px;
     }
 
     .info-grid {
-        grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .info-card {
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .info-card span {
+      display: block;
+      color: #8d96a8;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .info-card strong {
+      font-size: 14px;
+    }
+
+    /* MUSIC */
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 45px;
+    }
+
+    .platform {
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: .25s;
+    }
+
+    .platform:hover {
+      transform: translateY(-4px);
+      border-color: rgba(92,168,255,.45);
+      background: rgba(255,255,255,.08);
+    }
+
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 22px;
+      font-weight: 900;
+      background: rgba(255,255,255,.1);
+    }
+
+    .platform strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .platform small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .release-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .release {
+      padding: 23px;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      border-radius: 20px;
+      transition: .25s;
+    }
+
+    .release:hover {
+      transform: translateY(-5px);
+      border-color: rgba(92,168,255,.4);
+    }
+
+    .release-number {
+      color: #68758b;
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
+
+    .release h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .release p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .release a {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 230px;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 90% 10%, rgba(25,118,255,.15), transparent 35%),
+        var(--card);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .project .tag {
+      color: var(--blue);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .project h3 {
+      font-size: 25px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    /* VIDEOS */
+
+    .video-box {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 25px;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .play {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#2382ff,#1056ce);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      font-size: 25px;
+    }
+
+    .video-box h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .video-box p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.035);
+    }
+
+    /* UPDATES */
+
+    .update-list {
+      display: grid;
+      gap: 15px;
     }
 
     .update {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .update-date {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .update h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .update p {
+      color: var(--muted);
+    }
+
+    /* SOCIAL */
+
+    .social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .social a {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      color: #dce2ed;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .social a:hover {
+      background: rgba(255,255,255,.08);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 45px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #737c8d;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: rgba(5,7,13,.97);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 17px 5%;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-grid,
+      .about-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
+      }
+
+      .hero-photo {
+        order: -1;
+      }
+
+      .hero-photo img {
+        height: 430px;
+      }
+
+      .platforms {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .release-grid,
+      .project-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .project-cover {
-        height: 240px;
-    }
-}
+    @media (max-width: 560px) {
 
-</style>
+      section {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .platforms,
+      .release-grid,
+      .project-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo img,
+      .about-photo img {
+        height: 430px;
+      }
+
+      .gallery-item img {
+        height: 430px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     NAVIGATION
-     ===================================================== -->
+  <!-- HEADER -->
 
-<header class="navbar">
+  <header>
+    <div class="container nav">
 
-    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">I</span>
+        IDHANUSHH
+      </a>
 
-        <a href="#home" class="logo">
-            IDHANUSHH<span>®</span>
-        </a>
+      <button class="menu-btn" id="menuBtn">☰</button>
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#about">About</a>
-            <a href="#music">Music</a>
-            <a href="#projects">Projects</a>
-            <a href="#videos">Videos</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#updates">Updates</a>
-        </nav>
-
-        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
-            ☰
-        </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#music">Music</a>
+        <a href="#projects">Projects</a>
+        <a href="#videos">Videos</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#updates">Updates</a>
+      </nav>
 
     </div>
-
-</header>
-
-
-<!-- =====================================================
-     HOME
-     ===================================================== -->
-
-<section class="hero" id="home">
-
-    <div class="hero-bg"></div>
-
-    <div class="hero-grid">
-
-        <div class="hero-content">
-
-            <div class="hero-small">
-                Independent Artist
-            </div>
-
-            <h1>
-                IDHANU<span>SHH</span>
-            </h1>
-
-            <p class="hero-description">
-                Dhanush Selvadurai — independent artist creating
-                music across hip-hop, rap, pop, love and emotion.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#music" class="btn btn-primary">
-                    Explore Music
-                </a>
-
-                <a href="#about" class="btn btn-outline">
-                    About Me
-                </a>
-
-            </div>
-
-        </div>
+  </header>
 
 
-        <div class="hero-photo-wrap">
+  <!-- HERO -->
 
-            <img
-                src="1000156724.jpg"
-                alt="Idhanushh — Dhanush Selvadurai"
-                class="hero-photo"
-            >
+  <main>
 
-            <div class="photo-label">
-                <strong>Dhanush Selvadurai</strong>
-                <small>Artist • Musician • Rapper</small>
-            </div>
+    <section class="hero" id="home">
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SEARCH
-     ===================================================== -->
-
-<div class="search-area">
-
-    <input
-        type="search"
-        id="searchInput"
-        class="search-box"
-        placeholder="Search the Idhanushh website..."
-        onkeyup="searchSite()"
-    >
-
-</div>
-
-
-<!-- =====================================================
-     ABOUT
-     ===================================================== -->
-
-<section class="section section-dark searchable" id="about">
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            About
-        </div>
-
-        <h2>The Artist</h2>
-
-        <p>
-            Get to know Idhanushh and the person behind the music.
-        </p>
-
-    </div>
-
-
-    <div class="about-grid">
+      <div class="container hero-grid">
 
         <div>
 
-            <img
-                src="1000156729.jpg"
-                alt="Dhanush Selvadurai"
-                class="about-photo"
-            >
+          <div class="eyebrow">
+            Independent Artist
+          </div>
+
+          <h1>
+            IDHAN<span>USHH</span>
+          </h1>
+
+          <p>
+            Dhanush Selvadurai, professionally known as Idhanushh,
+            is an independent artist working across hip-hop, rap and pop.
+            His music explores love, heartbreak, emotions and personal experiences.
+          </p>
+
+          <div class="buttons">
+            <a class="btn primary" href="#music">
+              Explore Music
+            </a>
+
+            <a class="btn" href="#about">
+              About Artist
+            </a>
+          </div>
 
         </div>
 
+        <div class="hero-photo">
 
-        <div class="about-text">
+          <img
+            src="1000156724.jpg"
+            alt="Idhanushh"
+          >
 
-            <h3>
-                Idhanushh
-            </h3>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div class="small">About</div>
+          <h2>The Artist</h2>
+          <p>
+            Get to know Idhanushh and his artistic journey.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-photo">
+
+            <img
+              src="1000156729.jpg"
+              alt="Dhanush Selvadurai — Idhanushh"
+            >
+
+          </div>
+
+          <div class="about-text">
+
+            <h3>Dhanush Selvadurai</h3>
 
             <p>
-                <strong>Dhanush Selvadurai</strong>, professionally
-                known as <strong>Idhanushh</strong>, is an independent
-                artist working across music, hip-hop, rap and pop.
+              Dhanush Selvadurai, professionally known as Idhanushh,
+              is an independent artist and musician.
             </p>
 
             <p>
-                His musical work explores love, heartbreak,
-                relationships, emotions and personal experiences,
-                with a focus on developing an individual sound
-                and artistic identity.
+              His work moves across hip-hop, rap and pop, with songs
+              exploring love, heartbreak, relationships, emotions and
+              personal experiences.
             </p>
 
             <p>
-                This official personal website serves as a central
-                place for music, projects, visual work and future
-                announcements from Idhanushh.
+              This official website brings together his music,
+              creative projects, videos, visual work and future announcements.
             </p>
-
 
             <div class="info-grid">
 
-                <div class="info-item">
-                    <small>Birth Name</small>
-                    <strong>Dhanush Selvadurai</strong>
-                </div>
+              <div class="info-card">
+                <span>Stage Name</span>
+                <strong>Idhanushh</strong>
+              </div>
 
-                <div class="info-item">
-                    <small>Stage Name</small>
-                    <strong>Idhanushh</strong>
-                </div>
+              <div class="info-card">
+                <span>Real Name</span>
+                <strong>Dhanush Selvadurai</strong>
+              </div>
 
-                <div class="info-item">
-                    <small>Occupation</small>
-                    <strong>Independent Artist</strong>
-                </div>
-
-                <div class="info-item">
-                    <small>Genres</small>
-                    <strong>Hip-Hop • Rap • Pop</strong>
-                </div>
-
-                <div class="info-item">
-                    <small>Active</small>
-                    <strong>2024 — Present</strong>
-                </div>
-
-                <div class="info-item">
-                    <small>Based In</small>
-                    <strong>India</strong>
-                </div>
+              <div class="info-card">
+                <span>Genre</span>
+                <strong>Hip-Hop / Rap / Pop</strong>
+              </div>
 
             </div>
 
+          </div>
+
         </div>
 
-    </div>
+      </div>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <section id="music">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div class="small">Music</div>
+          <h2>Listen Now</h2>
+          <p>
+            Find Idhanushh across the major music platforms.
+          </p>
+        </div>
+
+
+        <!-- PLATFORM LINKS -->
+
+        <div class="platforms">
+
+          <a
+            class="platform"
+            href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <div class="app-icon">♫</div>
+
+            <div>
+              <strong>Spotify</strong>
+              <small>Listen to Idhanushh</small>
+            </div>
+
+          </a>
+
+
+          <a
+            class="platform"
+            href="https://music.apple.com/in/artist/idhanushh/1739295442"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <div class="app-icon"></div>
+
+            <div>
+              <strong>Apple Music</strong>
+              <small>Listen to Idhanushh</small>
+            </div>
+
+          </a>
+
+
+          <a
+            class="platform"
+            href="https://youtube.com/@dhanushselvaduraiofficial"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <div class="app-icon">▶</div>
+
+            <div>
+              <strong>YouTube</strong>
+              <small>Dhanush Selvadurai Official</small>
+            </div>
+
+          </a>
+
+
+          <a
+            class="platform"
+            href="https://www.instagram.com/_kd_dhxnush._/"
+            target="_blank"
+            rel="noopener"
+          >
+
+            <div class="app-icon">◎</div>
+
+            <div>
+              <strong>Instagram</strong>
+              <small>@_kd_dhxnush._</small>
+            </div>
+
+          </a>
+
+        </div>
+
+
+        <!-- RELEASES -->
+
+        <div class="release-grid">
+
+          <article class="release">
+            <div class="release-number">01 / 2024</div>
+            <h3>Penney Penney</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
+            <div class="release-number">02 / 2024</div>
+            <h3>MIGHTITTUDE</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
+            <div class="release-number">03 / 2024</div>
+            <h3>Enna Vittu</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
+            <div class="release-number">04 / 2024</div>
+            <h3>Who Theyy</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
+            <div class="release-number">05 / 2024</div>
+            <h3>Unakkena Vazhuren</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
+            <div class="release-number">06 / 2024</div>
+            <h3>En Appa (Live)</h3>
+            <p>Live Release</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
+            <div class="release-number">07 / 2025</div>
+            <h3>Scary Hours</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/artist/3X6YCZCmrtdDVbSjIDgsQh" target="_blank">
+              Listen on Spotify →
+            </a>
+          </article>
+
+          <article class="release">
