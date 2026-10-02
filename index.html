@@ -6,117 +6,916 @@
 
 <title>Idhanushh — Dhanush Selvadurai</title>
 
-<meta name="description" content="Official encyclopedia-style website for Idhanushh, also known as Dhanush Selvadurai, an independent artist.">
+<meta name="description" content="Official website of Idhanushh, also known as Dhanush Selvadurai, an independent artist. Explore music, videos, discography, gallery and updates.">
 <meta name="author" content="Dhanush Selvadurai">
 
 <style>
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f8f9fa;
+    background: #f6f7f9;
     color: #202122;
     line-height: 1.6;
 }
 
+/* HEADER */
 header {
-    background: #ffffff;
-    border-bottom: 1px solid #a2a9b1;
-    padding: 15px 20px;
+    background: #111827;
+    color: white;
+    padding: 18px 20px;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .header-inner {
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: bold;
-    color: #202122;
+    white-space: nowrap;
 }
 
 .logo span {
-    color: #3366cc;
+    color: #60a5fa;
 }
 
 nav {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
 nav a {
+    color: white;
     text-decoration: none;
-    color: #3366cc;
+    padding: 8px 11px;
+    border-radius: 6px;
     font-size: 14px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background: #374151;
 }
 
+/* SEARCH */
 .search-box {
-    max-width: 1200px;
-    margin: 20px auto 0;
+    max-width: 1150px;
+    margin: 25px auto 0;
     padding: 0 20px;
 }
 
 .search-box input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #a2a9b1;
-    border-radius: 4px;
-    font-size: 15px;
+    padding: 14px 16px;
+    border: 1px solid #c9ccd1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
 }
 
-.container {
-    max-width: 1200px;
+.search-box input:focus {
+    border-color: #3366cc;
+    box-shadow: 0 0 0 3px rgba(51,102,204,0.12);
+}
+
+/* MAIN */
+main {
+    max-width: 1150px;
     margin: auto;
-    padding: 25px 20px 60px;
+    padding: 25px 20px 50px;
 }
 
-h1 {
-    font-family: Georgia, serif;
-    font-size: 38px;
-    font-weight: normal;
-    border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 8px;
+.hero {
+    background: white;
+    border: 1px solid #d8dadd;
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
-h2 {
-    font-family: Georgia, serif;
-    font-size: 27px;
-    font-weight: normal;
-    border-bottom: 1px solid #c8ccd1;
-    padding-bottom: 5px;
-    margin-top: 35px;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 8px;
 }
 
-h3 {
-    font-size: 20px;
-}
-
-a {
+.hero h1 span {
     color: #3366cc;
 }
 
-.intro {
-    font-size: 17px;
+.hero p {
+    font-size: 18px;
+    color: #54595d;
 }
 
+.hero-buttons {
+    margin-top: 22px;
+}
+
+.button {
+    display: inline-block;
+    background: #3366cc;
+    color: white;
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #2855a8;
+}
+
+.button.secondary {
+    background: #202122;
+}
+
+section {
+    background: white;
+    border: 1px solid #d8dadd;
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+section h2 {
+    font-size: 28px;
+    border-bottom: 1px solid #c8ccd1;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+}
+
+section h3 {
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+/* INFOBOX */
 .infobox {
     float: right;
-    width: 310px;
+    width: 320px;
     margin: 0 0 20px 25px;
-    background: #f
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.infobox-title {
+    background: #eaecf0;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.infobox-image {
+    height: 190px;
+    background: linear-gradient(135deg, #111827, #374151);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.infobox-row {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    border-top: 1px solid #c8ccd1;
+}
+
+.infobox-row strong,
+.infobox-row span {
+    padding: 9px;
+}
+
+.infobox-row strong {
+    background: #eaecf0;
+}
+
+/* TABLE */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #eaecf0;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #c8ccd1;
+    padding: 11px;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    border: 1px solid #d8dadd;
+    border-radius: 9px;
+    overflow: hidden;
+    background: white;
+}
+
+.card-image {
+    height: 150px;
+    background: linear-gradient(135deg, #111827, #4b5563);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 17px;
+}
+
+.card-content h3 {
+    color: #202122;
+}
+
+.card-content p {
+    color: #54595d;
+    font-size: 14px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 190px;
+    background: linear-gradient(135deg, #e5e7eb, #9ca3af);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #202122;
+    font-weight: bold;
+}
+
+/* LINKS */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.links a {
+    display: inline-block;
+    background: #f0f2f5;
+    border: 1px solid #c8ccd1;
+    padding: 10px 15px;
+    border-radius: 7px;
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.links a:hover {
+    background: #e5e7eb;
+}
+
+/* FOOTER */
+footer {
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* SEARCH RESULT */
+.hidden {
+    display: none !important;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 25px 18px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .infobox {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            Idhanushh<span>®</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#music">Music</a>
+            <a href="#videos">Videos</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#updates">Updates</a>
+        </nav>
+
+    </div>
+</header>
+
+<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search this website..."
+        onkeyup="searchWebsite()"
+    >
+</div>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="hero searchable">
+
+    <h1>Idhanushh</h1>
+
+    <p>
+        Independent Artist • Musician • Rapper
+    </p>
+
+    <div class="hero-buttons">
+        <a class="button" href="#music">Explore Music</a>
+        <a class="button secondary" href="#about">About Idhanushh</a>
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="searchable">
+
+    <div class="infobox">
+
+        <div class="infobox-title">
+            Idhanushh
+        </div>
+
+        <div class="infobox-image">
+            IDHANUSHH
+        </div>
+
+        <div class="infobox-row">
+            <strong>Birth name</strong>
+            <span>Dhanush Selvadurai</span>
+        </div>
+
+        <div class="infobox-row">
+            <strong>Stage name</strong>
+            <span>Idhanushh</span>
+        </div>
+
+        <div class="infobox-row">
+            <strong>Occupation</strong>
+            <span>Independent Artist</span>
+        </div>
+
+        <div class="infobox-row">
+            <strong>Genres</strong>
+            <span>Hip-Hop, Rap, Pop</span>
+        </div>
+
+        <div class="infobox-row">
+            <strong>Years active</strong>
+            <span>2024–present</span>
+        </div>
+
+    </div>
+
+    <h2>About Idhanushh</h2>
+
+    <p>
+        <strong>Idhanushh</strong>, also known as
+        <strong>Dhanush Selvadurai</strong>, is an independent
+        artist working across music, hip-hop, rap and pop.
+    </p>
+
+    <p>
+        His music explores themes including love, heartbreak,
+        emotions, relationships and personal experiences.
+    </p>
+
+    <p>
+        This website is a personal encyclopedia-style archive
+        dedicated to Idhanushh, including his music, projects,
+        videos, gallery and updates.
+    </p>
+
+    <div style="clear:both;"></div>
+
+</section>
+
+
+<!-- MUSIC -->
+<section id="music" class="searchable">
+
+    <h2>Music & Discography</h2>
+
+    <p>
+        Selected releases and musical projects associated with Idhanushh.
+    </p>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Release</th>
+                    <th>Year</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Penney Penney</td>
+                    <td>2024</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>MIGHTITTUDE</td>
+                    <td>2024</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Enna Vittu</td>
+                    <td>2024</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Who theyy</td>
+                    <td>2024</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Unakkena Vazhuren</td>
+                    <td>2024</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>En appa (Live)</td>
+                    <td>2024</td>
+                    <td>Live</td>
+                </tr>
+
+                <tr>
+                    <td>Scary Hours</td>
+                    <td>2025</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>En Kanmaniye</td>
+                    <td>2025</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Zindagi</td>
+                    <td>2025</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Break Up</td>
+                    <td>2025</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Tere liye</td>
+                    <td>2025</td>
+                    <td>Single</td>
+                </tr>
+
+                <tr>
+                    <td>Jaan</td>
+                    <td>2025</td>
+                    <td>Single</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PROJECTS -->
+<section class="searchable">
+
+    <h2>Featured Projects</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-image">
+                ENNAVAL
+            </div>
+
+            <div class="card-content">
+                <h3>Ennaval</h3>
+                <p>
+                    A romantic musical project by Idhanushh.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-image">
+                TASVEER
+            </div>
+
+            <div class="card-content">
+                <h3>Tasveer</h3>
+                <p>
+                    A love-themed project featuring Idhanushh.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-image">
+                GOAT ANTHEM
+            </div>
+
+            <div class="card-content">
+                <h3>Goat Anthem</h3>
+                <p>
+                    An upcoming music project from Idhanushh.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+<section id="videos" class="searchable">
+
+    <h2>Music Videos</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-image">
+                ▶ VIDEO
+            </div>
+
+            <div class="card-content">
+                <h3>Official Music Videos</h3>
+
+                <p>
+                    Music videos and visual projects by Idhanushh.
+                </p>
+
+                <a class="button"
+                   href="https://www.youtube.com/"
+                   target="_blank">
+                    Watch on YouTube
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">
+                ▶ SHORTS
+            </div>
+
+            <div class="card-content">
+
+                <h3>YouTube Shorts</h3>
+
+                <p>
+                    Short-form music content, edits and performances.
+                </p>
+
+                <a class="button"
+                   href="https://www.youtube.com/"
+                   target="_blank">
+                    View Shorts
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">
+                ♫ MUSIC
+            </div>
+
+            <div class="card-content">
+
+                <h3>Streaming Music</h3>
+
+                <p>
+                    Discover Idhanushh on music streaming platforms.
+                </p>
+
+                <a class="button"
+                   href="https://open.spotify.com/"
+                   target="_blank">
+                    Spotify
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery" class="searchable">
+
+    <h2>Gallery</h2>
+
+    <p>
+        Photos, cover artwork, promotional artwork and visual projects.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            IDHANUSHH<br>PHOTO
+        </div>
+
+        <div class="gallery-item">
+            MUSIC<br>COVER
+        </div>
+
+        <div class="gallery-item">
+            PROMO<br>ARTWORK
+        </div>
+
+        <div class="gallery-item">
+            ENNAVAL
+        </div>
+
+        <div class="gallery-item">
+            TASVEER
+        </div>
+
+        <div class="gallery-item">
+            GOAT ANTHEM
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- UPDATES -->
+<section id="updates" class="searchable">
+
+    <h2>News & Updates</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-content">
+
+                <h3>New Music</h3>
+
+                <p>
+                    New music and upcoming projects from Idhanushh
+                    will be announced here.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-content">
+
+                <h3>New Videos</h3>
+
+                <p>
+                    New music videos and visual content will be
+                    added to the website.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-content">
+
+                <h3>Latest Updates</h3>
+
+                <p>
+                    Follow Idhanushh's official platforms for
+                    the latest announcements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFICIAL LINKS -->
+<section class="searchable">
+
+    <h2>Official Links</h2>
+
+    <div class="links">
+
+        <a href="https://www.youtube.com/"
+           target="_blank">
+            YouTube
+        </a>
+
+        <a href="https://open.spotify.com/"
+           target="_blank">
+            Spotify
+        </a>
+
+        <a href="https://www.instagram.com/"
+           target="_blank">
+            Instagram
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p><strong>Idhanushh</strong></p>
+
+    <p>
+        Dhanush Selvadurai • Independent Artist
+    </p>
+
+    <p>
+        © 2026 Idhanushh. All rights reserved.
+    </p>
+
+    <p>
+        This is an independent personal website and is not
+        affiliated with Wikipedia or Wikimedia Foundation.
+    </p>
+
+</footer>
+
+
+<script>
+
+function searchWebsite() {
+
+    const input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const sections = document.querySelectorAll(".searchable");
+
+    sections.forEach(function(section) {
+
+        const text = section.innerText.toLowerCase();
+
+        if (input === "" || text.includes(input)) {
+            section.classList.remove("hidden");
+        } else {
+            section.classList.add("hidden");
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
